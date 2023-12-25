@@ -78,7 +78,9 @@ public class GerakanTPS : MonoBehaviour
     {
         if (input != Vector2.zero)
         {
-            transform.eulerAngles = new Vector3(0, AngleBasedCamera(input), 0);
+           transform.rotation = Quaternion.Slerp(transform.rotation, 
+               Quaternion.Euler(new Vector3(0, AngleBasedCamera(input), 0)), .3f);
+            //transform.eulerAngles = new Vector3(0, AngleBasedCamera(input), 0);
         }      
     }
 
